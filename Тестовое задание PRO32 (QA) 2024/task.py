@@ -17,8 +17,8 @@ def random_string(length=10):
     letters = string.ascii_letters
     return ''.join(random.choice(letters) for i in range(length))
 
-username = 'bukharinav94@gmail.com'  # Логин
-password = 'n9D7XgEKPA'  # Пароль
+username = 'login'  # Логин
+password = 'password'  # Пароль
 
 # 1:Вход в ЛК
 session = requests.Session()
@@ -39,7 +39,7 @@ logging.info(f"Login Response: {response.status_code} - {response.text}")
 
 response = session.post(LOGIN_URL, json=login_data)
 logging.info(f"Login Response: {response.status_code} - {response.text}")
-##print(session.cookies.get_dict())
+###print(session.cookies.get_dict())
 
 if response.status_code == 200:
     logging.info('Login Succeed')
