@@ -17,8 +17,8 @@ def random_string(length=10):
     letters = string.ascii_letters
     return ''.join(random.choice(letters) for i in range(length))
 
-username = 'login'  # Логин
-password = 'password'  # Пароль
+username = 'bukharinav94@gmail.com'  # Логин
+password = 'n9D7XgEKPA'  # Пароль
 
 # 1:Вход в ЛК
 session = requests.Session()
