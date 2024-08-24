@@ -39,7 +39,7 @@ logging.info(f"Login Response: {response.status_code} - {response.text}")
 
 response = session.post(LOGIN_URL, json=login_data)
 logging.info(f"Login Response: {response.status_code} - {response.text}")
-###print(session.cookies.get_dict())
+#####print(session.cookies.get_dict())
 
 if response.status_code == 200:
     logging.info('Login Succeed')
