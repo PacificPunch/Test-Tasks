@@ -31,13 +31,13 @@ login_data = {
     'password': password,
 }
 
-response = session.get(TOKEN_URL)
+response = session.get(TOKEN_URL, headers={ 'x-requested-with': 'XMLHttpRequest' })
 logging.info(f"Login Response: {response.status_code} - {response.text}")
 
-response = session.post(CHECK_URL, json=login_check)
+response = session.post(CHECK_URL, json=login_check, headers={ 'x-requested-with': 'XMLHttpRequest' })
 logging.info(f"Login Response: {response.status_code} - {response.text}")
 
-response = session.post(LOGIN_URL, json=login_data)
+response = session.post(LOGIN_URL, json=login_data, headers={ 'x-requested-with': 'XMLHttpRequest' })
 logging.info(f"Login Response: {response.status_code} - {response.text}")
 #####print(session.cookies.get_dict())
 
@@ -68,7 +68,7 @@ update_data = {
     "timezone": "0"
 }
 
-response = session.put(PROFILE_URL, json=update_data)
+response = session.put(PROFILE_URL, json=update_data, headers={ 'x-requested-with': 'XMLHttpRequest' })
 logging.info(f"Update Profile Response: {response.status_code} - {response.text}")
 
 if response.status_code == 200:
