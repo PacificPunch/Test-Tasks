@@ -1,9 +1,18 @@
+class Oars: #Весла
+    def __init__(self):
+        pass
+
+    def row(self):
+        # Симуляция гребли
+        return True
+
 class Rowboat: #Лодка
     def __init__(self, capacity):
         self.capacity = capacity    #(вместимость) - максимальное количество людей
         self.current_load = 0       #(текущая загрузка) - текущее количество людей в лодке
         self.is_moving = False      #(движение) - состояние лодки (движется или нет)
         self.speed = 0              #(скорость) - скорость движения лодки
+        self.oars = Oars()          #(Весла) -
 
     def add_passenger(self):        #добавить пассажира в лодку
         if self.current_load < self.capacity:
