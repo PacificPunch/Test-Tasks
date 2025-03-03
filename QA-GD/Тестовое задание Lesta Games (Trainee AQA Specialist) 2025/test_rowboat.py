@@ -1,10 +1,5 @@
 import pytest
 from rowboat import Rowboat
-from rowboat import Oars
-from logger_config import setup_logger
-
-logger = setup_logger()
-#######################################################################################################
 
 'TESTS ROWBOAT'
 
