@@ -24,8 +24,8 @@ class Oars:
 
 class Rowboat:
     def __init__(self, max_speed, max_passengers):
-        self.max_speed = max_speed
-        self.max_passengers = max_passengers
+        self.max_speed = max(max_speed, 1)  # Минимальная скорость 1
+        self.max_passengers = max(max_passengers, 1)  # Минимальное количество пассажиров 1
         self.passengers = []
         self.oars = Oars()
         self.is_moving = False
