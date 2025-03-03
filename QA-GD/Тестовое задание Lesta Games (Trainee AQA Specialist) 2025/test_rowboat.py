@@ -134,13 +134,4 @@ def test_is_rowing():  # проверка движения лодки (скор�
     assert rowboat.is_rowing() == True  # После начала гребли лодка должна двигаться
     rowboat.start_rowing(-3)
     assert rowboat.is_rowing() == False  # После остановки гребли лодка не должна двигаться
-
-def test_rowing():
-    rowboat = Rowboat(5, 3)
-    rowboat.start_rowing(3)
-    assert rowboat.get_current_speed() == 3
-    assert rowboat.is_rowing() == True
-    rowboat.start_rowing(-3)
-    assert rowboat.get_current_speed() == 0
-    assert rowboat.is_rowing() == False
 #######################################################################################################
