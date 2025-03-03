@@ -32,10 +32,8 @@ class Rowboat:
         self.speed = 0
 
     def add_passenger(self, passenger_name): #добавить пассажира в лодку
-        if len(self.passengers) < self.max_passengers:
-            self.passengers.append(passenger_name)
-        else:
-            print("Лодка переполнена")
+        assert len(self.passengers) < self.max_passengers, "Лодка переполнена"
+        self.passengers.append(passenger_name)
 
     def remove_passenger(self, passenger_name): #убрать пассажира из лодки
         if passenger_name in self.passengers:
@@ -70,12 +68,11 @@ class Rowboat:
     def is_rowing(self): #получить текущее состояние лодки движется или нет
         return self.is_moving
 
-
 # Пример использования
-boat = Rowboat(10, 5)
-boat.add_passenger("John")
-boat.start_rowing(5)
-print(f"Скорость: {boat.get_current_speed()} км/ч")
-print(f"Направление: {boat.get_current_direction()}")
-print(f"Пассажиры: {boat.get_passengers()}")
-print(f"Лодка движется: {boat.is_rowing()}")
+rowboat = Rowboat(10, 5)
+rowboat.add_passenger("John")
+rowboat.start_rowing(5)
+print(f"Скорость: {rowboat.get_current_speed()} км/ч")
+print(f"Направление: {rowboat.get_current_direction()}")
+print(f"Пассажиры: {rowboat.get_passengers()}")
+print(f"Лодка движется: {rowboat.is_rowing()}")
